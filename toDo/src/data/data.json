@@ -1,0 +1,26 @@
+[
+    {
+        "task": "Wash a cat",
+        "done": false
+    },
+    {
+        "task": "Clean the kitchen",
+        "done": false
+    },
+    {
+        "task": "Finish the report",
+        "done": false
+    },
+    {
+        "task": "Buy groceries",
+        "done": true
+    },
+    {
+        "task": "Exercise for 30 minutes",
+        "done": false
+    },
+    {
+        "task": "Call mom",
+        "done": false
+    }
+]
