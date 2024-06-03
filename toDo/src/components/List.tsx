@@ -7,10 +7,10 @@ export default function ListComp() {
   const tasks = data?.tasks;
 
   return (
-    <>
+    <div className="d-flex flex-column align-items-center justify-content-center">
       {tasks?.map((task, index) => (
-        <ListRow {...task} key={index} />
+        <ListRow {...task} key={index}></ListRow>
       ))}
-    </>
+    </div>
   );
 }

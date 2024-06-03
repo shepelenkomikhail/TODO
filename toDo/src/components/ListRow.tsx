@@ -10,12 +10,13 @@ export default function ListRow({ task, done }: ListRowProps) {
   const [markDone, setMarkDone] = useState(done);
 
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack direction="horizontal" gap={3} className="d-flex ">
       <div
         style={{
           background: markDone ? "red" : "green",
           width: "1rem",
           height: "1rem",
+          cursor: "pointer",
         }}
         className="border border-success rounded-circle"
         onClick={() => setMarkDone(!markDone)}
