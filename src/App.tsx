@@ -19,22 +19,15 @@ export const DataContext = React.createContext<DataContextType | undefined>(
 );
 
 function App() {
-  const [tasks, setTasks] = useState(tasksData);
+  const storedTasks = localStorage.getItem("myTasks");
+  const [tasks, setTasks] = useState<TaskType[]>(
+    storedTasks ? JSON.parse(storedTasks) : tasksData
+  );
+
   const setData = (t: TaskType[]) => setTasks(t);
 
   useEffect(() => {
     const jsonTasks = JSON.stringify(tasks);
-    const updateJsonFile = async () => {
-      await fetch("src/data/data.json", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonTasks,
-      });
-    };
-
-    updateJsonFile();
     localStorage.setItem("myTasks", jsonTasks);
   }, [tasks]);
 
